@@ -12,7 +12,7 @@
    :caption: 全部章节目录
 
    关于本指南
-   test
+   测试目录/index
    语言风格/index
    文档结构样式/index
    文档内容元素/index
