@@ -19,7 +19,7 @@ from datetime import datetime
 
 # -- Project information -----------------------------------------------------
 
-project = '中文技术文档写作风格指南'
+project = '厂太SadTalker版本技术文档'
 currentYear = datetime.now().year
 author = 'yikeke'
 copyright = '2020-' + str(currentYear) + ', ' + author
@@ -79,7 +79,7 @@ master_doc = 'index'
 
 html_theme = 'sphinx_material'
 # Set link name generated in the top bar.
-html_title = '中文技术文档写作风格指南'
+html_title = '厂太SadTalker版本技术文档'
 # Specify a base_url used to generate sitemap.xml. If not
 # specified, then no sitemap will be built.
 # base_url = 'https://cocoyi.online/'
@@ -92,11 +92,11 @@ html_theme_options = {
     'master_doc': False,
 
     # Set you GA account ID to enable tracking
-    'google_analytics_account': '142118122',
+    'google_analytics_account': 'RYG123',
 
     # Set the repo location to get a badge with stats
-    'repo_url': 'https://github.com/yikeke/zh-style-guide/',
-    'repo_name': 'zh-style-guide',
+    'repo_url': 'https://github.com/RYG123/',
+    'repo_name': 'digital_human_document',
 
     # Visible levels of the global TOC; -1 means unlimited
     'globaltoc_depth': 2,
@@ -105,7 +105,7 @@ html_theme_options = {
     # If True, show hidden TOC entries
     'globaltoc_includehidden': False,
 
-    'heroes': {'index': 'An open-source style guide for writing Chinese technical documents',
+    'heroes': {'index': 'An guide for gzhu digital human project documents',
                '文档结构样式/index': 'Structure, Focus, Unity and Flow','语言风格/index': 'Stay Close to Your Users','文档内容元素/index': 'Details Matter','标点符号/index': 'Details Matter'},
 }
 

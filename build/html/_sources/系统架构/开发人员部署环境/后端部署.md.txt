@@ -1,0 +1,92 @@
+## 后端部署
+
+从上一小节我们知道要使用docker技术，我们需要在docker容器里面进行后端项目的部署，后端是使用python进行编写的，所以我们需要在docker容器中进行python的环境配置
+
+从上一小节我们知道要使用docker技术，我们需要在docker容器里面进行前端项目的部署。下面的操作是默认电脑已经安装docker，并且前端是使用vue进行编写，所以我们需要进行node环境配置。
+
+**使用命令行拉取Ubuntu镜像**：
+```shell
+# search：指定为搜索镜像。
+# ubuntu：指定要搜索的镜像名称。
+docker search ubuntu
+
+# pull：拉取镜像。
+# ubuntu：指定要拉取镜像名称。
+# tag: 表示拉取镜像的版本
+docker search ubuntu tag:latest
+```
+
+**启动ubuntu容器**：
+```shell
+# run：指定为运行容器命令。。
+# -it：通过结合-i（保持标准输入打开）和-t（分配一个伪终端）参数，以交互模式启动容器。
+# -name: 给容器起名字
+# -p：指定主机与容器之间的端口映射。
+# ubuntu：指定要使用的镜像名称。
+# /bin/bash：在容器中执行的命令，这里指定为启动一个bash终端。
+docker run -it -name [容器名字] -p[端口号映射]ubuntu /bin/bash
+```
+
+**安装yum**：
+```shell
+# sudo是linux系统的命令
+# apt-get: 是用于 Debian、Ubuntu及其衍生发行版的一个命令行工具，用于管理软件包（packages）。
+# YUM是一种在Red Hat系列Linux发行版中广泛使用的包管理工具，它可以帮助用户管理和安装软件包。
+
+# 这个命令用于更新软件包列表。它会从Ubuntu官方软件源获取最新的软件包信息，并将其存储在本地系统中。
+sudo apt-get update
+# 这个命令用于升级已安装的软件包到最新版本。它会检查系统中已安装的软件包，并尝试升级它们到最新的可用版本。
+sudo apt-get upgrade
+# 这个命令用于安装构建基本工具。它会安装一些常用的构建工具，如编译器、链接器和构建工具链等，以便在系统中进行软件开发和编译操作。
+sudo apt-get install build-essential
+# 这个命令用于安装YUM。
+sudo apt-get install yum
+```
+
+**使用yum安装git**:
+```shell
+# git：代码管理工具
+
+yum install -y git
+# 看是否安装完成，若有：git version 2.32.1 (Apple Git-133)则表示完成
+git version
+```
+
+**进行git配置**：
+```shell
+# 配置一个用于提交代码的用户
+git config --global user.name "YourGitAccountName"
+# 配置一个用户邮箱
+git config --global user.email "YourGitEmail@xxx"
+
+
+# 生成公钥和私钥，输入命令后一路回车即可
+ssh-keygen -t rsa -C "YourGitEmail@xxx"
+# 查看公钥并切进行复制，放到自己的github账户的ssh下面，位置：账号/setting/SSH AND GPG Keys中
+cat /root/.ssh/id_rsa.pub
+```
+
+**ubuntu容器中配置python环境**：
+```shell
+# 带加入配置方法
+```
+
+**使用git拉取前端项目**：
+```shell
+git clone [项目链接]
+
+#使用命令行进入拉取下来的项目
+
+# 检查git的日志是否有错
+git log
+
+#安装项目依赖,要是安装完成，再运行项目
+pip install requirement.txt
+# 运行python项目
+xxx
+```
+**请补充更多配置操作**
+> 例如：如何发布网页
+
+***因为语言模型和后端是在同一个docker容器中进行的，那么请移步到语言模型环境部署中去查看相关的部署操作***
+
