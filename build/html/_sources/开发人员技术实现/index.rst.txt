@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-技术实现
+开发人员技术实现
 =================================================
 
 本章对前后端交互功能，语言模型与后端交互的功能实现进行阐述
