@@ -14,9 +14,9 @@
    :maxdepth: 2
    
    需求分析与规划
+   Docker安装
    语言模型选择与集成/index
    视频生成技术/index
    前端功能实现/index
    后端功能实现/index
-   部署与上线
 
